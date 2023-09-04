@@ -1,11 +1,9 @@
 import React from 'react';
-import './App.css';
+import Form from './components/form/Form';
 
 function App() {
   return (
-    <div className="bg-red-500">
-     <h1>Hello world</h1>
-    </div>
+    <Form />
   );
 }
 
