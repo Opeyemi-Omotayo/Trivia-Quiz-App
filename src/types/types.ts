@@ -15,5 +15,9 @@ export interface AppContextProp {
     correct: number,
     error: boolean,
     modal: boolean,
-    handleSubmit: (e:React.FormEvent) =>void,
+    handleSubmit: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    handleChange:  (e: React.ChangeEvent<HTMLInputElement>) => void,
+    checkAnswers: (value: any) => void,
+    nextQuestion: () => void,
+    closeModal: () => void,
 }

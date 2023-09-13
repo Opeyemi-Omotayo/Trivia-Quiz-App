@@ -18,9 +18,22 @@ root.render(
       correct={0}
       error={false}
       modal={false}
-      handleSubmit={function (e: React.FormEvent): void{
+      handleSubmit={function (e: React.ChangeEvent<HTMLInputElement>): void{
         throw new Error('unable to fetch questions!')
-      }}>
+      }}
+      handleChange={function (e: React.ChangeEvent<HTMLInputElement>): void{
+        throw new Error('unable to handle change!')
+      }}
+      checkAnswers={function (value: any): void{
+        throw new Error('unable to check answers!')
+      }}
+      nextQuestion={function (): void{
+        throw new Error('unable to go to the next question!')
+      }}
+      closeModal={function (): void{
+        throw new Error('unable to close modal!')
+      }}
+      >
       <App />
     </AppProvider>
   </React.StrictMode>
