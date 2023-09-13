@@ -4,8 +4,8 @@ import Result from './components/result/Result';
 
 function App() {
   return (
-    //<Form />
-    <Result />
+    <Form />
+    //<Result />
   );
 }
 

@@ -14,7 +14,7 @@ const Result = () => {
         <p>You answered n questions correctly</p>
         <div className="flex items-center justify-center">
           <button className="py-3 px-5 mt-6 text-white bg-purple-700 rounded-lg shadow-lg">
-            play again
+            Play again
           </button>
         </div>
       </ModalContent>
