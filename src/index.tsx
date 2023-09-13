@@ -18,7 +18,7 @@ root.render(
       correct={0}
       error={false}
       modal={false}
-      fetchQuestions={function (url: any): Promise<void>{
+      handleSubmit={function (e: React.FormEvent): void{
         throw new Error('unable to fetch questions!')
       }}>
       <App />

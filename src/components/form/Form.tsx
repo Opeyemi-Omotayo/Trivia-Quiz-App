@@ -36,7 +36,7 @@ const Form = () => {
               id="difficulty"
               className="bg-gray-50 p-2 rounded-md "
             >
-              <option value="ease">Easy</option>
+              <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Difficult</option>
             </select>

@@ -1,3 +1,11 @@
+export type TableProp = {
+    [key: string]: number;
+    sports: number;
+    history: number;
+    politics: number;
+  };
+  
+
 export interface AppContextProp {
     children?: React.ReactNode,
     waiting: boolean,
@@ -7,5 +15,5 @@ export interface AppContextProp {
     correct: number,
     error: boolean,
     modal: boolean,
-    fetchQuestions: (url: any) => Promise<void>,
+    handleSubmit: (e:React.FormEvent) =>void,
 }
