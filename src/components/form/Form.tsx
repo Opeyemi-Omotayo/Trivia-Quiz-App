@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import AppContext from '../../context/Context';
+import Button from '../../elements/Button';
 
 const Form = () => {
   const { quiz, handleChange, handleSubmit, error } = useContext(AppContext);
@@ -53,14 +54,9 @@ const Form = () => {
           {error && (
             <p className="text-red-500 text-sm">can't generates questions , pls try again</p>
           )}
-         <div className='flex items-end justify-end   '>
-         <button type="submit"  className=" mt-6 w-[35%] text-lg text-white bg-purple-700 p-3  rounded-md shadow-md" >
-            start
-          </button>
-         </div>
-         
-          </form>
-          </section>
+          <Button>Start</Button>
+        </form>
+      </section>
     </div>
   )
 }

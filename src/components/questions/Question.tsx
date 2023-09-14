@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../../context/Context';
+import Button from '../../elements/Button';
 
 const Question = () => {
   const {questions, correct, index, nextQuestion, checkAnswers} = useContext(AppContext);
@@ -41,10 +42,7 @@ const Question = () => {
               );
             })}</div>
         </article>
-        <div className='flex items-end justify-end   '>
-        <button type="submit" onClick={nextQuestion} className=" mt-6 w-[35%] text-lg text-white bg-sky-500 p-3  rounded-md shadow-md">next questions</button>        
-         </div>
-
+         <Button onClick={nextQuestion}>Next Question</Button>
       </section>
     </div>
   )
