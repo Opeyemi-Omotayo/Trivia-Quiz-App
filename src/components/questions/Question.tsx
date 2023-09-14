@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import AppContext from '../../context/Context';
 import Button from '../../elements/Button';
+import Wrapper from '../../elements/Wrapper';
 
 const Question = () => {
-  const {questions, correct, index, nextQuestion, checkAnswers} = useContext(AppContext);
+  const { questions, correct, index, nextQuestion, checkAnswers } = useContext(AppContext);
 
   if (!questions || index < 0 || index >= questions.length) {
     return (
@@ -25,26 +26,26 @@ const Question = () => {
     answers[tempIndex] = correct_answer;
   }
   return (
-    <div className="h-[100vh] font-mono flex items-center justify-center bg-gray-50">
+    <Wrapper>
       <section className="bg-white p-8 rounded-lg shadow-lg w-[70%]">
         <div className='flex items-end justify-end   '>
-        <p className='text-green-500 text-sm mb-6'> correct answers: {correct}/{index}</p>
-         </div>
+          <p className='text-green-500 text-sm mb-6'> correct answers: {correct}/{index}</p>
+        </div>
         <article >
           <h2 className='text-center font-bold text-2xl capitalize mb-8'>{question}</h2>
           <div className='flex flex-col' >{answers.map((answer, index) => {
-              return (
-                <button
-                  key={index}
-                  className="bg-sky-300 my-1 py-1 shadow-sm rounded-sm hover:text-white hover:bg-sky-500"
-                  onClick={() => checkAnswers(correct_answer === answer)}
-                >{answer}</button>
-              );
-            })}</div>
+            return (
+              <button
+                key={index}
+                className="bg-sky-300 my-1 py-1 shadow-sm rounded-sm hover:text-white hover:bg-sky-500"
+                onClick={() => checkAnswers(correct_answer === answer)}
+              >{answer}</button>
+            );
+          })}</div>
         </article>
-         <Button onClick={nextQuestion}>Next Question</Button>
+        <Button onClick={nextQuestion}>Next Question</Button>
       </section>
-    </div>
+    </Wrapper>
   )
 }
 
