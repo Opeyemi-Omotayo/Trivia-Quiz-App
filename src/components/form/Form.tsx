@@ -35,6 +35,8 @@ const Form = () => {
             <option value="sports">Sports</option>
             <option value="history">History</option>
             <option value="politics">Politics</option>
+            <option value="generalknowledge">General Knowledge</option>
+            <option value="scienceNature">Science & Nature</option>
           </select>
         </div>
         <div className=" pt-6 flex flex-col">

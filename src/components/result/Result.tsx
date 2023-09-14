@@ -12,7 +12,7 @@ const Result = () => {
     >
       <ModalContent className="mx-3 font-mono p-5 md:p-0 rounded-2xl flex flex-col justify-center items-center bg-white w-[35%] h-[45vh]">
         <h2 className="text-4xl font-semibold text-center pb-6">Congrats</h2>
-        <p>You answered {((correct / questions.length) * 100).toFixed(0)}%</p>
+        <p>You answered {correct} questions correctly! ({((correct / questions.length) * 100).toFixed(0)}%)</p>
         <div className="flex items-center justify-center">
           <button className="py-3 px-5 mt-6 text-white bg-sky-500 rounded-lg shadow-lg" onClick={closeModal}>
             Play again

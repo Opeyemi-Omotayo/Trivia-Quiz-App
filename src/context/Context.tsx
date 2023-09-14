@@ -6,7 +6,9 @@ import { TableProp } from "../types/types";
 const table: TableProp = {
   sports: 21,
   history: 23,
-  politics: 24
+  politics: 24,
+  generalknowledge: 9,
+  scienceNature: 17,
 };
 
 const AppContext = createContext<AppContextProp>(null!);

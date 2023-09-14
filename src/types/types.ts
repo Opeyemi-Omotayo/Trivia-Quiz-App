@@ -3,6 +3,8 @@ export type TableProp = {
   sports: number;
   history: number;
   politics: number;
+  generalknowledge: number;
+  scienceNature: number;
 };
 
 export interface ButtonProps {
