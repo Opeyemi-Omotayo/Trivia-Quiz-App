@@ -24,27 +24,25 @@ const Question = () => {
     answers[tempIndex] = correct_answer;
   }
   return (
-    <div className="h-[100vh] font-mono flex items-center justify-center bg-gradient-to-tr from-purple-700 via-purple-400 to-purple-200">
+    <div className="h-[100vh] font-mono flex items-center justify-center bg-gray-50">
       <section className="bg-white p-8 rounded-lg shadow-lg w-[70%]">
         <div className='flex items-end justify-end   '>
-        <p className='text-green-500'> correct answers: {correct}/{index}</p>
+        <p className='text-green-500 text-sm mb-6'> correct answers: {correct}/{index}</p>
          </div>
         <article >
-          {/* <h2 className='text-center font-bold text-2xl'>{question}</h2> */}
-          <h2 dangerouslySetInnerHTML={{ __html: question }} />
-          <div >{answers.map((answer, index) => {
+          <h2 className='text-center font-bold text-2xl capitalize mb-8'>{question}</h2>
+          <div className='flex flex-col' >{answers.map((answer, index) => {
               return (
                 <button
                   key={index}
-                  className="answer-btn"
+                  className="bg-sky-300 my-1 py-1 shadow-sm rounded-sm hover:text-white hover:bg-sky-500"
                   onClick={() => checkAnswers(correct_answer === answer)}
-                  dangerouslySetInnerHTML={{ __html: answer }}
-                />
+                >{answer}</button>
               );
             })}</div>
         </article>
         <div className='flex items-end justify-end   '>
-        <button type="submit" onClick={nextQuestion} className=" mt-6 w-[35%] text-lg text-white bg-purple-700 p-3  rounded-md shadow-md">next questions</button>        
+        <button type="submit" onClick={nextQuestion} className=" mt-6 w-[35%] text-lg text-white bg-sky-500 p-3  rounded-md shadow-md">next questions</button>        
          </div>
 
       </section>

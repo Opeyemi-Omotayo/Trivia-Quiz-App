@@ -39,8 +39,8 @@ export const AppProvider: React.FC<AppContextProp> = ({ children }) => {
       .catch((err) => {
         console.log(err);
         setWaiting(true);
-            setLoading(false);
-            console.log('thereee')
+        setLoading(false);
+        console.log('thereee')
       });
   };
 
