@@ -18,10 +18,11 @@ root.render(
       correct={0}
       error={false}
       modal={false}
-      handleSubmit={function (e: React.ChangeEvent<HTMLInputElement>): void{
+      quiz={{}}
+      handleSubmit={function (e: React.FormEvent<HTMLFormElement>): void{
         throw new Error('unable to fetch questions!')
       }}
-      handleChange={function (e: React.ChangeEvent<HTMLInputElement>): void{
+      handleChange={function (e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>): void{
         throw new Error('unable to handle change!')
       }}
       checkAnswers={function (value: any): void{

@@ -28,25 +28,23 @@ export const AppProvider: React.FC<AppContextProp> = ({ children }) => {
   const fetchQuestions = async (url: any) => {
     setLoading(true);
     setWaiting(false);
-    const response = await axios(url).catch((err) => console.log(err));
-
-    if (response) {
-      const data = response.data.results;
-      if (data.length > 0) {
-        setQuestions(data);
+    const response = await axios(url)
+      .then((res) => {
+        setQuestions(res.data.results);
         setLoading(false);
-        setWaiting(false);
         setError(false);
-      } else {
+        setWaiting(false);
+        console.log('hereeee', res)
+      })
+      .catch((err) => {
+        console.log(err);
         setWaiting(true);
-        setLoading(true);
-      }
-    } else {
-      setWaiting(true);
-    }
+            setLoading(false);
+            console.log('thereee')
+      });
   };
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { amount, difficulty, category } = quiz;
     const url = `${process.env.REACT_APP_URL}?amount=${amount}&difficulty=${difficulty}&category=${table[category]}&type=multiple`;
@@ -59,7 +57,7 @@ export const AppProvider: React.FC<AppContextProp> = ({ children }) => {
 
   const closeModal = () => {
     setModal(false);
-    setWaiting(true);
+    setWaiting(false);
     setCorrect(0);
   };
 
@@ -82,11 +80,12 @@ export const AppProvider: React.FC<AppContextProp> = ({ children }) => {
     nextQuestion();
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.name;
     const value = e.target.value;
     setQuiz({ ...quiz, [name]: value });
   };
+
 
 
   const contextData = {
