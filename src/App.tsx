@@ -4,19 +4,21 @@ import Result from './components/result/Result';
 import Question from './components/questions/Question';
 import { ToastContainer, Slide } from 'react-toastify';
 import AppContext from './context/Context';
+import LoadingSpinner from './components/loadingSpinner/LoadingSpinner';
 
 function App() {
-  const {waiting, loading} = useContext(AppContext);
+  const {waiting, loading, modal} = useContext(AppContext);
 
   if (waiting) {
     return <Form />;
   }
   if (loading) {
-    return <div>loading....</div>;
+    return <LoadingSpinner />
+  
   }
   return (
     <div>
-      <Result />
+      {modal && <Result />}
       <Question />
       <ToastContainer
         position="top-right"

@@ -30,7 +30,7 @@ export const AppProvider: React.FC<AppContextProp> = ({ children }) => {
   const fetchQuestions = async (url: any) => {
     setLoading(true);
     setWaiting(false);
-    const response = await axios(url)
+   await axios(url)
       .then((res) => {
         setQuestions(res.data.results);
         setLoading(false);
@@ -59,7 +59,7 @@ export const AppProvider: React.FC<AppContextProp> = ({ children }) => {
 
   const closeModal = () => {
     setModal(false);
-    setWaiting(false);
+    setWaiting(true);
     setCorrect(0);
   };
 
