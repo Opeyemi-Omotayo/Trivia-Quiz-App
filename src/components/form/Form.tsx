@@ -8,7 +8,7 @@ const Form = () => {
 
   return (
     <Wrapper>
-      <form className="bg-white p-8 rounded-lg shadow-lg w-[40%]" onSubmit={handleSubmit}>
+      <form className="bg-white p-8 rounded-lg shadow-lg w-[85%] md:w-[60%] lg:w-[40%]" onSubmit={handleSubmit}>
         <h2 className='text-2xl font-semibold text-center'>Setup Quiz</h2>
         <div className="pt-6 flex flex-col">
           <label htmlFor="amount" className="font-semibold">Number of questions</label>

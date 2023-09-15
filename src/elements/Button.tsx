@@ -7,7 +7,7 @@ const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
             <button
                 type="submit"
                 onClick={onClick}
-                className="mt-6 w-[35%] text-lg text-white bg-sky-500 p-3  rounded-md shadow-md"
+                className="mt-6 w-[55%] md:w-[35%] text-sm md:text-lg text-white bg-sky-500 p-3  rounded-md shadow-md"
             >
                 {children}
             </button>

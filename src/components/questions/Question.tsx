@@ -27,17 +27,17 @@ const Question = () => {
   }
   return (
     <Wrapper>
-      <section className="bg-white p-8 rounded-lg shadow-lg w-[70%]">
+      <section className="bg-white p-8 rounded-lg shadow-lg w-[90%] md:w-[70%]">
         <div className='flex items-end justify-end   '>
-          <p className='text-green-500 text-sm mb-6'> correct answers: {correct}/{index}</p>
+          <p className='text-green-500 text-xs md:text-sm mb-6'> correct answers: {correct}/{index}</p>
         </div>
         <article >
-          <h2 className='text-center font-bold text-2xl capitalize mb-8'>{question}</h2>
+          <h2 className='text-center font-bold text-lg md:text-2xl capitalize mb-8'>{question}</h2>
           <div className='flex flex-col' >{answers.map((answer, index) => {
             return (
               <button
                 key={index}
-                className="bg-sky-300 my-1 py-1 shadow-sm rounded-sm hover:text-white hover:bg-sky-500"
+                className="bg-sky-300 text-sm md:text-lg my-1 py-2 shadow-sm rounded-sm hover:text-white hover:bg-sky-500"
                 onClick={() => checkAnswers(correct_answer === answer)}
               >{answer}</button>
             );
